@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/jquery.jqplot.js"></script>
+<script type="text/javascript" src="/static/plugins/jqplot.canvasTextRenderer.js"></script>
+<script type="text/javascript" src="/static/plugins/jqplot.canvasAxisLabelRenderer.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/jquery.jqplot.css" />
+<script type="text/javascript">
+$(document).ready(function(){
+
+		
+		var stocks = []
+		
+		{% for i in db_list %}
+			var z1 = [];
+			{% for idx ,j in enumerate(i) %}
+				z1.push([{{idx}},{{j}}]);
+			{% endfor %}
+			stocks.push(z1);
+		{% endfor %}
+		
+		
+		
+		{
+		var z1 = [];
+		z1.push([0,0]);
+		z1.push([1,0]);
+		z1.push([2,0]);
+		stocks.push(z1)
+		}
+		
+		{
+		var z2 = [];
+		z2.push([0,1]);
+		z2.push([1,1]);
+		z2.push([2,1]);
+		stocks.push(z2)
+		}
+	 
+		var plot3 = $.jqplot('chart3', stocks, 
+		  { 
+		    title:'Line Style Options', 
+		    // Set default options on all series, turn on smoothing.
+		    seriesDefaults: {
+		        rendererOptions: {
+		            smooth: true
+		        }
+		    },
+		    // Series options are specified as an array of objects, one object
+		    // for each series.
+		    series:[ 
+		        {
+		          // Change our line width and use a diamond shaped marker.
+		          lineWidth:2, 
+		          markerOptions: { style:'diamond' }
+		        }, 
+		        {
+		          // Don't show a line, just show markers.
+		          // Make the markers 7 pixels with an 'x' style
+		          showLine:false, 
+		          markerOptions: { size: 7, style:"x" }
+		        },
+		        { 
+		          // Use (open) circlular markers.
+		          markerOptions: { style:"circle" }
+		        }, 
+		        {
+		          // Use a thicker, 5 pixel line and 10 pixel
+		          // filled square markers.
+		          lineWidth:5, 
+		          markerOptions: { style:"filledSquare", size:10 }
+		        }
+		    ]
+		  }
+		);
+	    
+	});
+
+</script>
+</head>
+<body>
+<div id="chart3">
+</div>
+</body>
+</html>

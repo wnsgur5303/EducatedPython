@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/static/jquery-3.5.1.js" ></script>
+<script type="text/javascript">
+	function upd(){
+		var emp_id = $('#emp_id').val();
+		var emp_name = $('#emp_name').val();
+		var nickname = $('#nickname').val();
+		
+        $.ajax({
+                type : 'GET',
+                url : '/upd.ajax',
+                data : {
+                        emp_id:emp_id,
+                        emp_name:emp_name,
+                        nickname:nickname
+                },
+                dataType : 'JSON',
+                success : function(data){
+                		var obj_json = JSON.parse(data)
+                		if(obj_json.cnt == 1){
+                			alert("됐")
+                			location.reload()
+                		}else{
+                		alert("안됐")
+                		}
+                },
+                error : function(xtr,status,error){
+                	arlert("오류!")
+                        console.log(error);
+                }
+        });
+}
+	function del(){
+		var emp_id = $('#emp_id').val();
+        $.ajax({
+            type : 'GET',
+            url : '/del.ajax',
+            data : {
+                    emp_id:emp_id,
+            },
+            dataType : 'JSON',
+            success : function(data){
+        		var obj_json = JSON.parse(data)
+        		if(obj_json.cnt == 1){
+        			alert("됐")
+        			location.reload()
+        		}else{
+        		alert("안됐")
+        		}
+            },
+            error : function(xtr,status,error){
+                    console.log(error);
+            }
+    });
+	}
+	function ins(){
+		var emp_name = $('#emp_name').val();
+		var nickname = $('#nickname').val();
+		
+        $.ajax({
+                type : 'GET',
+                url : '/ins.ajax',
+                data : {
+                        emp_name:emp_name,
+                        nickname:nickname
+                },
+                dataType : 'JSON',
+                success : function(data){
+            		var obj_json = JSON.parse(data)
+            		if(obj_json.cnt == 1){
+            			alert("됐")
+            			location.reload()
+            		}else{
+            		alert("안됐")
+            		}
+                },
+                error : function(xtr,status,error){
+                        console.log(error);
+                }
+        });
+	}
+	function setEmp(emp_id,emp_name,nickname){
+		$("#emp_id").val(emp_id);
+		$("#emp_name").val(emp_name);
+		$("#nickname").val(nickname);
+		
+		
+// 		var obj_emp_id = document.getElementById("emp_id");
+// 		var obj_emp_name = document.getElementById("emp_name");
+// 		var obj_nickname = document.getElementById("nickname");
+		
+// 		obj_emp_id.value = emp_id;
+// 		obj_emp_name.value = emp_name;
+// 		obj_nickname.value = nickname;
+
+	}	
+</script>
+</head>
+<body>
+EMP CRUD <br>
+<table border="2">
+<tr>
+<td>
+
+<table border="1">
+{% for i in db_list %} 
+<tr>
+	<td><a href="javascript:setEmp('{{i[0]}}','{{i[1]}}','{{i[2]}}')">{{i[0]}}</a></td>
+	<td>{{i[1]}}</td>
+	<td>{{i[2]}}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+</td>
+<td>
+<table border="1">
+	<tr><td>사번</td><td><input type="text" id="emp_id" /></td></tr>
+	<tr><td>이름</td><td><input type="text" id="emp_name" /></td></tr>
+	<tr><td>별명</td><td><input type="text" id="nickname" /></td></tr>
+	<tr>
+		<td colspan="2">
+			<a href="javascript:upd()">수정</a> 
+			<a href="javascript:del()">삭제</a> 
+			<a href="javascript:ins()">추가</a> 
+		</td>
+	</tr>
+</table>
+
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>

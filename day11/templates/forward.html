@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+i'm forward
+
+{{code}}
+<table border="1">
+<tr><td>s_code</td><td>s_name</td><td>s_price</td><td>in_date</td></tr>
+{% for cod in code %}
+	<tr><td>{{cod[0]}}</td><td>{{cod[1]}}</td><td>{{cod[2]}}</td><td>{{cod[3]}}</td></tr>
+{% endfor %}
+
+</table><br>
+</body>
+</html>

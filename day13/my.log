@@ -1,0 +1,30 @@
+^^
+server start!!!
+w
+e
+\[T]/
+2021-01-08 17:09:11,078 - my - DEBUG - conn select
+2021-01-08 17:09:23,848 - my - DEBUG - conn delete
+2021-01-08 17:09:25,994 - my - DEBUG - conn select
+2021-01-08 17:09:28,969 - my - DEBUG - conn update
+2021-01-08 17:09:36,496 - my - DEBUG - conn update
+2021-01-08 17:09:38,993 - my - DEBUG - conn select
+2021-01-08 17:11:17,000 - my - DEBUG - conn select
+2021-01-08 17:11:21,664 - my - DEBUG - conn delete
+2021-01-08 17:11:21,682 - my - DEBUG - delete ok
+2021-01-08 17:11:24,128 - my - DEBUG - conn select
+2021-01-08 17:11:37,273 - my - DEBUG - conn update
+2021-01-08 17:11:37,278 - my - DEBUG - update ok
+2021-01-08 17:11:38,265 - my - DEBUG - conn select
+2021-01-08 17:11:44,873 - my - DEBUG - conn select
+2021-01-08 17:11:50,976 - my - DEBUG - conn insert
+2021-01-08 17:11:50,992 - my - DEBUG - insert ok
+2021-01-08 17:11:54,593 - my - DEBUG - conn select
+2021-01-09 16:45:22,175 - my - DEBUG - conn select
+2021-01-11 13:37:09,242 - my - DEBUG - conn select
+2021-01-11 13:37:30,030 - my - DEBUG - conn insert
+2021-01-11 13:37:30,046 - my - DEBUG - insert ok
+2021-01-11 13:37:31,022 - my - DEBUG - conn select
+2021-01-11 13:39:45,532 - my - DEBUG - conn delete
+2021-01-11 13:39:45,547 - my - DEBUG - delete ok
+2021-01-11 13:39:46,223 - my - DEBUG - conn select

@@ -1,0 +1,2 @@
+[0104/204137.830:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\PC-12\AppData\Local\Temp\scoped_dir8600_1974841241\Crashpad\attachments\de8a2dea-ffd4-41c6-9bb4-f87023be2e1c: 지정된 경로를 찾을 수 없습니다. (0x3)
+[0105/174433.837:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\PC-12\AppData\Local\Temp\scoped_dir10200_1915573094\Crashpad\attachments\83f62d15-dda5-4a5f-b1ce-4a73a21573fc: 지정된 경로를 찾을 수 없습니다. (0x3)
